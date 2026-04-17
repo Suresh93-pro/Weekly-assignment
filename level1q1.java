@@ -3,14 +3,23 @@ import java.util.Scanner;
 public class level1q1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int ages[] = new int[10];
 
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
+        // Input
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Enter age of student " + (i + 1) + ": ");
+            ages[i] = sc.nextInt();
+        }
 
-        if (num % 5 == 0) {
-            System.out.println("Is the number divisible by 5? Yes");
-        } else {
-            System.out.println("Is the number divisible by 5? No");
+        // Check
+        for (int i = 0; i < 10; i++) {
+            if (ages[i] < 0) {
+                System.out.println("Invalid age");
+            } else if (ages[i] >= 18) {
+                System.out.println("Student with age " + ages[i] + " can vote");
+            } else {
+                System.out.println("Student with age " + ages[i] + " cannot vote");
+            }
         }
     }
 
